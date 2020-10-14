@@ -31,6 +31,37 @@ public class SingleLinkedList {
     }
 
     /**
+     * 按照顺序添加节点
+     * 1.找到添加节点的位置，找节点的前一个节点temp
+     * 2.新节点的next等于temp.next
+     * 3.temp.next=新的节点
+     * 如果重复了就提示错误
+     */
+    public void addNodeByOrder(HeroNode heroNode){
+        //先取到头节点的副本temp
+        HeroNode headNodeTemp=headNode;
+        //判断新加入的节点是否重复了，默认false
+        boolean flag=false;
+        //遍历链表
+        while (true){
+            //默认从第一个开始都比新的节点小，直到找到比添加的节点大的节点为止.遍历到最后一个，退出循环
+            if (headNodeTemp.next==null||headNodeTemp.next.no>heroNode.no){
+                heroNode.next=headNodeTemp.next;
+                headNodeTemp.next=heroNode;
+                break;
+            }
+            //如果有重复的，就退出循环
+            if (headNodeTemp.next.no==heroNode.no){
+                System.out.println("节点:"+heroNode.no+"已经存在");
+                break;
+            }
+            //往后移
+            headNodeTemp=headNodeTemp.next;
+        }
+    }
+
+
+    /**
      * 遍历链表
      */
     public void list(){
