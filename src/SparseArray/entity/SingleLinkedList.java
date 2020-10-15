@@ -31,6 +31,44 @@ public class SingleLinkedList {
     }
 
     /**
+     * 修改节点信息
+     * 1.根据节点的no来进行修改
+     * 2.先判断链表是否为空
+     * 3.遍历链表，找到该节点，如果找不到，给出提示信息
+     * 4.直接修改该节点的信息
+     */
+    public void editNodeInfo(HeroNode heroNode){
+        //1.先判断链表是否为空
+        if (headNode.next==null){
+            System.out.println("修改失败，链表为空");
+            return;
+        }
+        //判断是否能找到该节点
+        boolean flag=false;
+        //需要一个头节点副本遍历temp
+        HeroNode headNodeTemp=headNode;
+        while (true){
+            if (headNodeTemp.next==null){
+                break;
+            }
+            if (headNodeTemp.next.no==heroNode.no){
+                flag=true;
+                heroNode.next=headNodeTemp.next.next;
+                headNodeTemp.next=heroNode;
+                break;
+            }
+            headNodeTemp=headNodeTemp.next;
+        }
+        if (!flag){
+            System.out.println("修改失败，节点"+heroNode.no+"不存在");
+        }
+
+    }
+
+
+
+
+    /**
      * 按照顺序添加节点
      * 1.找到添加节点的位置，找节点的前一个节点temp
      * 2.新节点的next等于temp.next
@@ -59,6 +97,39 @@ public class SingleLinkedList {
             headNodeTemp=headNodeTemp.next;
         }
     }
+
+    /**
+     * 删除节点
+     * 1.先找到删除的节点的上一个节点
+     * 2.上一个节点的next指向被删除节点的next
+     * 3.如果没找到的话就提示错误
+     */
+    public void deleteNode(HeroNode heroNode){
+        //先使用头节点的副本
+        HeroNode headNodeTemp=headNode;
+        //用来判断是否有找到删除的节点
+        boolean flag=false;
+        //遍历链表
+        while (true){
+            if (headNodeTemp.next==null){
+                break;
+            }
+            if (headNodeTemp.next.no==heroNode.no){
+                //直接指向后一个节点，被删除的节点被断开
+                headNodeTemp.next=headNodeTemp.next.next;
+                flag=true;
+                break;
+            }
+            headNodeTemp=headNodeTemp.next;
+        }
+        //判断是否删除了
+        if (!flag){
+            System.out.println("删除失败，节点"+heroNode.no+"不存在");
+        }
+    }
+
+
+
 
 
     /**
