@@ -10,6 +10,7 @@ public class SingleLinkedList {
      */
     private HeroNode headNode=new HeroNode(0,"","");
 
+
     /**
      * 添加节点到单项链表
      * 思路：当不考虑编号顺序时
@@ -64,8 +65,6 @@ public class SingleLinkedList {
         }
 
     }
-
-
 
 
     /**
@@ -128,7 +127,80 @@ public class SingleLinkedList {
         }
     }
 
+    /**
+     * 查询单链表节点个数
+     * @return
+     */
+    public int getListNodeNum(){
+        //节点个数
+        int num=0;
+        //先判断链表是否为空
+        if (headNode.next==null){
+            return num;
+        }
+        //需要头结点
+        HeroNode temp=headNode.next;
+        while (true){
+            if (temp==null){
+                break;
+            }
+            num++;
+            //节点后移
+            temp=temp.next;
+        }
+        return num;
+    }
 
+
+    /**
+     * 查询单链表倒数第k个结点
+     * 1.遍历节点，计算出单链表的个数count
+     * 2.从头结点开始循环，循环次数（count-k）
+     * @return
+     */
+    public HeroNode getHeadNodeByIndex(int k){
+        if (headNode.next==null){
+            return null;
+        }
+        int count = getListNodeNum();
+        //判断k是否合法
+        if (k<=0 || k>count){
+            return null;
+        }
+        HeroNode headNodeTemp=headNode;
+        for (int i = 0; i <= count-k; i++) {
+            headNodeTemp=headNodeTemp.next;
+        }
+        return headNodeTemp;
+    }
+
+    /**
+     * 反转链表
+     * 1.新建立一个临时头结点
+     * 2.遍历链表
+     * 3.每次遍历一个结点，将这个节点移除到新的头结点的下一个节点
+     * 4.遍历完之后将头结点指向临时头结点的下一个节点
+     */
+    public void reverseLinkedList(){
+        if (headNode.next==null||headNode.next.next==null){
+            return;
+        }
+
+        //1.临时头节点
+        HeroNode newNode=new HeroNode();
+        //辅助节点
+        HeroNode cur=headNode.next;
+        //next节点
+        HeroNode next=null;
+        //2.遍历链表
+        while (cur!=null){
+            next=cur.next;
+            cur.next=newNode.next;
+            newNode.next=cur;
+            cur=next;
+        }
+        headNode.next=newNode.next;
+    }
 
 
 
@@ -151,5 +223,29 @@ public class SingleLinkedList {
             //节点后移
             temp=temp.next;
         }
+    }
+
+    /**
+     * 逆序打印：递归打印
+     */
+    public void printReverse(HeroNode head){
+        //需要一个头结点副本来遍历
+        while (true){
+            if(head==null){
+                break;
+            }else {
+                printReverse(head.next);
+                System.out.println(head.toString());
+                break;
+            }
+        }
+    }
+
+    public HeroNode getHeadNode() {
+        return headNode;
+    }
+
+    public void setHeadNode(HeroNode headNode) {
+        this.headNode = headNode;
     }
 }

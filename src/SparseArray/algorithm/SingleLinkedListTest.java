@@ -15,16 +15,24 @@ public class SingleLinkedListTest {
         SingleLinkedListTest singleLinkedListTest=new SingleLinkedListTest();
         System.out.println("===========顺序添加节点==========");
         SingleLinkedList singleLinkedList=singleLinkedListTest.testAddNodeByOrder();
-        System.out.println("===========修改节点==========");
-        singleLinkedListTest.testEditNodeInfo(singleLinkedList);
-        System.out.println("===========删除节点==========");
-        singleLinkedListTest.testDeleteNode(singleLinkedList);
+        System.out.println("===========链表节点个数==========");
+        System.out.println(singleLinkedList.getListNodeNum());
+//        int k=3;
+//        System.out.println("===========链表倒数第"+k+"节点个数==========");
+//        System.out.println(singleLinkedList.getHeadNodeByIndex(k).toString());
+//        System.out.println("===========修改节点==========");
+//        singleLinkedListTest.testEditNodeInfo(singleLinkedList);
+        System.out.println("逆序打印链表");
+        singleLinkedList.printReverse(singleLinkedList.getHeadNode());
+//        System.out.println("===========删除节点==========");
+//        singleLinkedListTest.testDeleteNode(singleLinkedList);
+//        System.out.println("===========链表节点个数==========");
+//        System.out.println(singleLinkedList.getListNodeNum());
     }
 
     /**
      * 表尾添加节点
      */
-    @Test
     public void testAddNode(){
         //创建节点
         HeroNode heroNode1=new HeroNode(1,"nt1","sb1");
@@ -50,7 +58,6 @@ public class SingleLinkedListTest {
     /**
      * 按照顺序添加节点
      */
-    @Test
     public SingleLinkedList testAddNodeByOrder(){
         //创建节点
         HeroNode heroNode1=new HeroNode(1,"nt1","sb1");
@@ -79,7 +86,6 @@ public class SingleLinkedListTest {
     /**
      * 修改链表节点
      */
-    @Test
     public void testEditNodeInfo(SingleLinkedList singleLinkedList){
         HeroNode heroNode1=new HeroNode(1,"nt11","sb11");
         HeroNode heroNode2=new HeroNode(2,"nt22","sb22");
