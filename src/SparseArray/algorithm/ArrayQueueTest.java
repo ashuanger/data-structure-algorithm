@@ -1,7 +1,6 @@
 package SparseArray.algorithm;
 
-import SparseArray.entity.ArrayQueue;
-import org.junit.Test;
+import SparseArray.node.ArrayQueue;
 
 import java.util.Scanner;
 

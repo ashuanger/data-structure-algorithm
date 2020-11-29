@@ -1,5 +1,7 @@
 package SparseArray.entity;
 
+import SparseArray.node.HeroNode;
+
 /**
  * @author 爽
  * 单链表

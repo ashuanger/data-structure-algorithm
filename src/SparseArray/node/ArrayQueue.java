@@ -1,4 +1,4 @@
-package SparseArray.entity;
+package SparseArray.node;
 
 /**
  * @author 爽

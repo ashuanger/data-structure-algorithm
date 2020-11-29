@@ -1,8 +1,7 @@
 package SparseArray.algorithm;
 
-import SparseArray.entity.HeroNode;
+import SparseArray.node.HeroNode;
 import SparseArray.entity.SingleLinkedList;
-import org.junit.Test;
 
 /**
  * @author 爽

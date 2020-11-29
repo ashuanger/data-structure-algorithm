@@ -2,7 +2,7 @@ package SparseArray.algorithm;
 
 
 import SparseArray.entity.DoubleLinkedList;
-import SparseArray.entity.DoubleNode;
+import SparseArray.node.DoubleNode;
 
 /**
  * @author 爽

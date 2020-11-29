@@ -1,5 +1,7 @@
 package SparseArray.entity;
 
+import SparseArray.node.DoubleNode;
+
 /**
  * @author 爽
  * 双向链表
