@@ -16,6 +16,10 @@ public class SingleNode {
      */
     private SingleNode next;
 
+    public SingleNode() {
+
+    }
+
     public SingleNode(int val) {
         this.val = val;
     }
