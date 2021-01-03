@@ -10,9 +10,9 @@ import java.util.Arrays;
 public class Select {
 
     public static void main(String[] args) {
-        int[] array = new int[20000];
-        for (int i = 0; i <20000 ; i++) {
-            array[i]=(int)(Math.random()*20000);
+        int[] array = new int[80000];
+        for (int i = 0; i <80000 ; i++) {
+            array[i]=(int)(Math.random()*80000);
         }
 
         selectSort(array);
