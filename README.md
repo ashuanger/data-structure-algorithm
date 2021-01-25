@@ -58,5 +58,18 @@
     | 计数排序 | O(n+k)         | O(n+k)      | O(n + k)    | O(k)       | Out-place | 稳定   |
     | 桶排序   | O(n+k)         | O(n+k)      | O(n^2)      | O(n + k)   | Out-place | 稳定   |
     | 基数排序 | O(n * k)       | O(n * k)    | O(n * k)    | O(n + k)   | Out-place | 稳定   |
+    
+- 2021.1.25
+    1. 二分查找算法
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
 
     
