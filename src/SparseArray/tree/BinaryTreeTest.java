@@ -41,6 +41,10 @@ public class BinaryTreeTest {
         }else {
             System.out.println(findTreeNode.toString());
         }
-
+        BinaryTree.binaryTreePrologue(root);
+        System.out.println("");
+        root=BinaryTree.deleteRoot(root,6);
+        BinaryTree.binaryTreePrologue(root);
+        System.out.println("");
     }
 }
