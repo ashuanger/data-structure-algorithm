@@ -13,5 +13,6 @@ public class ArrayBinaryTreeTest {
         ArrayBinaryTree.arrBinaryTreeMiddle(arrayBinaryTreeNode.getArray(),0);
         System.out.println("");
         ArrayBinaryTree.arrBinaryTreePost(arrayBinaryTreeNode.getArray(),0);
+
     }
 }

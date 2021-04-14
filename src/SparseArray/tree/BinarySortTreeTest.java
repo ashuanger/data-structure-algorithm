@@ -28,5 +28,9 @@ public class BinarySortTreeTest {
         BinarySortTree.deleteNode(22,headNode);
         System.out.println("");
         BinaryTree.binaryTreeMiddle(headNode);
+        System.out.println("");
+        System.out.println(TreeUtil.getHeight(headNode));
+        System.out.println(TreeUtil.getLeftNodeHeight(headNode));
+        System.out.println(TreeUtil.getRightNodeHeight(headNode));
     }
 }

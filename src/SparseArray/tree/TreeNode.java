@@ -50,6 +50,9 @@ public class TreeNode {
         this.value=Integer.toString(key);
     }
 
+    public TreeNode() {
+    }
+
     @Override
     public String toString() {
         return "TreeNode{" +

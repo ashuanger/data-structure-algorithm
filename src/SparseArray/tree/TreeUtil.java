@@ -1,11 +1,11 @@
 package SparseArray.tree;
 
 /**
- * 遍历树
+ * 树通用方法类
  *
  * @author 爽
  */
-public class BinaryTree {
+public class TreeUtil {
 
 
     /**
@@ -180,60 +180,6 @@ public class BinaryTree {
         return Math.max(
                 treeNode.getLeftChild()== null?0:getHeight(treeNode.getLeftChild()),
                 treeNode.getRightChild()== null?0:getHeight(treeNode.getRightChild()))+1;
-    }
-
-
-    /**
-     * 删除节点：如果删除的不是非叶子结点，也将子节点删除
-     *
-     * @param treeNode
-     * @param key
-     */
-    public static void deleteNodeAll(TreeNode treeNode, int key) {
-        if (treeNode == null) {
-            System.out.println("删除失败，节点为空");
-            return;
-        }
-        if (treeNode.getKey() == key) {
-            treeNode = null;
-            return;
-        }
-        //判断左子节点是否为待删除节点
-        if (treeNode.getLeftChild() != null && treeNode.getLeftChild().getKey() == key) {
-            treeNode.setLeftChild(null);
-            return;
-        }
-        //判断左子节点是否为待删除节点
-        if (treeNode.getRightChild() != null && treeNode.getRightChild().getKey() == key) {
-            treeNode.setRightChild(null);
-            return;
-        }
-        //判断左子节点是否为空,如果不是，递归
-        if (treeNode.getLeftChild() != null) {
-            deleteNodeAll(treeNode.getLeftChild(), key);
-        }
-        //判断右子节点是否为空,如果不是，递归
-        if (treeNode.getRightChild() != null) {
-            deleteNodeAll(treeNode.getRightChild(), key);
-        }
-    }
-
-    /**
-     * 删除节点
-     *
-     * @param root
-     * @param key
-     */
-    public static TreeNode deleteRoot(TreeNode root, int key) {
-        if (root == null) {
-            return root;
-        }
-        if (root.getKey() == key) {
-            root = null;
-            return root;
-        }
-        deleteNodeAll(root, key);
-        return root;
     }
 
 }
